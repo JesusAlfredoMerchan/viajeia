@@ -35,8 +35,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Configurar API Key de Gemini (usar variable de entorno en producción)
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyCKLNkxnhxWqbzDFlN5pxgpuuhziINi9Wo")
+# Configurar API Key de Gemini (usar variable de entorno - NUNCA hardcodear)
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
+    raise ValueError("GEMINI_API_KEY no está configurada. Por favor, configúrala como variable de entorno.")
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Configurar API Key de OpenWeatherMap

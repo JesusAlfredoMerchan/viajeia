@@ -31,6 +31,8 @@ frontend/.env
 backend/__pycache__/
 backend/*.pdf
 backend/tmp*.pdf
+backend/.env
+backend/.env.local
 
 # IDE
 .vscode/
