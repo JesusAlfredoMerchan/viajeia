@@ -7,7 +7,11 @@ import google.generativeai as genai
 import requests
 import re
 import os
+from dotenv import load_dotenv
 from reportlab.lib.pagesizes import letter, A4
+
+# Cargar variables de entorno desde .env (solo en desarrollo local)
+load_dotenv()
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Image, PageBreak, Table, TableStyle
