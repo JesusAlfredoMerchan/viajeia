@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: viajeia-backend
+    env: python
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: GEMINI_API_KEY
+        value: AIzaSyCKLNkxnhxWqbzDFlN5pxgpuuhziINi9Wo
+      - key: OPENWEATHER_API_KEY
+        value: 03248d23bd5ad5a2cdf438702eaf90df
+      - key: UNSPLASH_ACCESS_KEY
+        value: 4aAIVujx9_CZOOm2xUNIpfT2uK_aOyeSDqYT7RuLQno
+      - key: UNSPLASH_SECRET_KEY
+        value: aulHfu35e6QxnLQGC-sGwPSL0-yZjNIvpOyuEzIFOKY
+      - key: ALLOWED_ORIGINS
+        value: "*"
+
